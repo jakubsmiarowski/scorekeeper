@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import PlayersList from './components/PlayersList/PlayersList';
 import AddPlayer from './components/AddPlayer/AddPlayer';
+
 class App extends Component {
   constructor() {
     super();
@@ -32,11 +33,15 @@ class App extends Component {
     })
   }
 
+  onPlayerRemove = () => {
+    
+  }
+
   render() {
     return (
       <div className="App">
         <AddPlayer onPlayerAdd={this.PlayerAdd} />
-        <PlayersList players={this.state.players} onScoreUpdate={this.onScoreUpdate} />
+        <PlayersList players={this.state.players} onScoreUpdate={this.onScoreUpdate} onPlayerRemove={this.onPlayerRemove} />
       </div>
     );
   }

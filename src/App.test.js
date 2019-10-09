@@ -26,7 +26,7 @@ it('should update player score', () => {
     onScoreUpdate(0, 5);
     const playersAfterUpdate = appComponent.state('players');
 
-    expect(playersAfterUpdate).toEqual()
+    expect(playersAfterUpdate[0].score).toEqual(5)
 });
 
 it('should add player to state', () => {
@@ -38,4 +38,22 @@ it('should add player to state', () => {
     expect(players.length).toEqual(1);
     expect(players[0].name).toEqual('Ania');
     expect(players[0].score).toEqual(0);
-})
+});
+
+it('should update player list', () => {
+    const appComponent = shallow(<App />);
+    const players = [
+        {
+            name: 'Kunegunda',
+            score: 5
+        },
+        {
+            name: 'Antoś',
+            score: 0
+        }
+    ]
+    appComponent.setState({ players });
+
+    const onPlayerRemove = appComponent.find(PlayersList).prop('onPlayerRemove');
+
+});
