@@ -1,7 +1,7 @@
 import React from 'react';
-import shallow from 'enzyme';
+import { shallow } from 'enzyme';
 import App from './App';
-import PlayersList from './components/PlayerList/PlayersList';
+import PlayersList from './components/PlayersList/PlayersList';
 
 it('renders without crashing', () => {
     shallow( <App /> );
