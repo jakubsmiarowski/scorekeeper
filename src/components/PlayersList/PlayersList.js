@@ -10,6 +10,7 @@ const PlayersList = (props) => (
                 name={player.name}
                 score={player.score}
                 onPlayerScoreChange={(points) => props.onScoreUpdate(i, points)}
+                onPlayerRemove={(player) => props.onPlayerUpdate(i, player)}
                 />)
             )}
     </ul>
