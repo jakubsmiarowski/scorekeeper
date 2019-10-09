@@ -34,7 +34,9 @@ class App extends Component {
   }
 
   onPlayerRemove = () => {
-    
+    this.setState({
+      players: this.state.players.filter(player);
+    })
   }
 
   render() {
