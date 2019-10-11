@@ -12,7 +12,7 @@ it('renders correct name', () => {
 
     const playerNameRendered = playerComponent.find('.Player__name').text();
 
-    expect (playerNameRendered).toEqual(playerNamePassed);
+    expect(playerNameRendered).toEqual(playerNamePassed);
 })
 
 it('renders correct score', () => {
@@ -21,7 +21,7 @@ it('renders correct score', () => {
 
     const playerScoreRendered = Number(playerComponent.find('.Player__score').text());
 
-    expect (playerScoreRendered).toEqual(playerScore);
+    expect(playerScoreRendered).toEqual(playerScore);
 })
 
 it('should call onPlayerScoreChange with 1 when plus button is clicked', () => {
@@ -46,7 +46,17 @@ it('should call onPlayerScoreChange with 1 when minus button is clicked', () => 
     expect(mockedOnPlayerScoreChange).toBeCalledWith(-1);
 })
 
-it('should remove player from state list', () => {
+it('should remove player from list', () => {
+    const players = [
+        {
+            name: 'Kunegunda',
+            score: 5
+        },
+        {
+            name: 'Antoś',
+            score: 0
+        }
+    ]
     const mockedOnPlayerRemove = jest.fn();
     const playerComponent = shallow(<Player oPlayerRemove={mockedOnPlayerRemove} />);
 
