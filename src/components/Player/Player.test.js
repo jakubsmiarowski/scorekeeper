@@ -64,5 +64,5 @@ it('should remove player from list', () => {
 
     removePlayerButton.simulate('click');
 
-    expect(mockedOnPlayerRemove).toEqual;
+    expect(mockedOnPlayerRemove).toEqual(players);
 })
