@@ -55,5 +55,9 @@ it('should remove player from list', () => {
 
     removePlayerButton.simulate('click');
 
+<<<<<<< HEAD
     expect(mockedOnPlayerRemove).toBeCalled();
+=======
+    expect(mockedOnPlayerRemove).toEqual(players);
+>>>>>>> f9cffc2e3e508726a50b9716cbe861770ca9c546
 })
