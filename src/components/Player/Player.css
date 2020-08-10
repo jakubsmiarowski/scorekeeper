@@ -1,0 +1,36 @@
+.Player {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.Player__name {
+    font-size: 30px;
+    color: blue;
+}
+
+.Player__score {
+    font-size: 40px;
+}
+
+.Player__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Player__button {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.Button__plus {
+    color: green;
+    font-size: 40px;
+}
+
+.Button__minus {
+    color: red;
+    font-size: 40px;
+}

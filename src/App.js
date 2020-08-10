@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import PlayersList from './components/PlayersList/PlayersList';
-import AddPlayer from './components/AddPlayer/AddPlayer';
+import React, { Component } from "react";
+import "./App.css";
+import PlayersList from "./components/PlayersList/PlayersList";
+import AddPlayer from "./components/AddPlayer/AddPlayer";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      players: []
-    }
+      players: [],
+    };
   }
 
   onScoreUpdate = (playerIndex, scoreChange) => {
@@ -19,35 +19,39 @@ class App extends Component {
           return { ...player, score: player.score + scoreChange };
         }
         return player;
-      })
-    })
-  }
+      }),
+    });
+  };
 
   onPlayerAdd = (playerName) => {
     const newPlayer = {
       name: playerName,
       score: 0,
-    }
+    };
     this.setState({
-      players: [...this.state.players, newPlayer]
-    })
-  }
+      players: [...this.state.players, newPlayer],
+    });
+  };
 
   onPlayerRemove = (playerIndex) => {
     const playersLeft = this.state.players.filter(
       (player, index) => index !== playerIndex
     );
-    this.setState({ players: playersLeft })
+    this.setState({ players: playersLeft });
   };
 
   render() {
     return (
       <div className="App">
-        <AddPlayer onPlayerAdd={this.PlayerAdd} />
-        <PlayersList 
-          players={this.state.players} 
-          onScoreUpdate={this.onScoreUpdate} 
-          onPlayerRemove={this.onPlayerRemove} />
+        <div className="App__header">
+          <h3>Board Game Scorekeeper</h3>
+          <AddPlayer onPlayerAdd={this.onPlayerAdd} />
+        </div>
+        <PlayersList
+          players={this.state.players}
+          onScoreUpdate={this.onScoreUpdate}
+          onPlayerRemove={this.onPlayerRemove}
+        />
       </div>
     );
   }
