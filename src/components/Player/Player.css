@@ -34,3 +34,9 @@
     color: red;
     font-size: 40px;
 }
+
+@media (max-width: 500px) {
+    .Player__score {
+        font-size: 30px;
+    }
+}

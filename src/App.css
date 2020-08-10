@@ -5,3 +5,9 @@
     align-items: center;
     background-color: aquamarine;
 }
+
+@media (max-width: 500px) {
+    .App__header h3 {
+        font-size: 15px;
+    }
+}

@@ -9,3 +9,9 @@
     background: #f1c40f;
     color: #2c3e50;
 }
+
+@media (max-width: 500px) {
+    .AddPlayer__input {
+        padding: 5px;
+    }
+}
